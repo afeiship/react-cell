@@ -10,23 +10,16 @@ export default class extends PureComponent {
   /*===properties start===*/
   static propTypes = {
     className: PropTypes.string,
-    border: PropTypes.bool,
   };
 
   static defaultProps = {
-    border: true
   };
   /*===properties end===*/
 
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
-    const {className, children,border} = this.props;
+    const {className, children,...props} = this.props;
     return (
-      <div  data-border={border} className={classNames('react-cell-body', className)}>{children}</div>
+      <div {...props} className={classNames('react-cell-body', className)}>{children}</div>
     );
   }
 }

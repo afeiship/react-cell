@@ -11,7 +11,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="hello-react-cells">
-        <ReactCells border={false}>
+        <ReactCells>
           <ReactCell>
             <ReactCellLeft>
               <img src={Icon1Image} width="24" alt=""/>
@@ -19,7 +19,7 @@ class App extends React.Component {
             <ReactCellBody>
               购物车
             </ReactCellBody>
-            <ReactCellRight />
+            <ReactCellRight style={{color:'#f00',fontSize:'16px'}}>*</ReactCellRight>
           </ReactCell>
 
 

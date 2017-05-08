@@ -10,19 +10,26 @@ export default class extends PureComponent {
   /*===properties start===*/
   static propTypes = {
     className: PropTypes.string,
-    border: PropTypes.bool,
+    leftBorder: PropTypes.bool,
+    borders: PropTypes.oneOf([
+      'top',
+      'bottom',
+      'both'
+    ])
   };
 
   static defaultProps = {
-    border: true
+    leftBorder: true,
+    borders: 'both'
   };
   /*===properties end===*/
 
 
   render() {
-    const {className, children, border} = this.props;
+    const {className, children, borders, leftBorder,...props} = this.props;
     return (
-      <section data-border={border} className={classNames('react-cells', className)}>{children}</section>
+      <section {...props} data-borders={borders} data-left-border={leftBorder}
+               className={classNames('react-cells', className)}>{children}</section>
     );
   }
 }

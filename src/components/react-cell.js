@@ -9,16 +9,21 @@ import noop from 'noop';
 export default class extends PureComponent {
   /*===properties start===*/
   static propTypes = {
-    className: PropTypes.string
+    className: PropTypes.string,
+    clickable: PropTypes.bool
   };
 
-  static defaultProps = {};
+  static defaultProps = {
+    borders: 'both',
+    clickable: true
+  };
   /*===properties end===*/
 
   render() {
-    const {className, children} = this.props;
+    const {className, children, borders, clickable,...props} = this.props;
     return (
-      <div className={classNames('react-cell', className)}>{children}</div>
+      <div {...props} data-clickable={clickable} data-borders={borders}
+           className={classNames('react-cell', className)}>{children}</div>
     );
   }
 }

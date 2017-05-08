@@ -5,6 +5,7 @@
   -o-box-flex: $n;
   box-flex: $n;
 }
+
 @mixin box-pack($value:center) {
   -webkit-box-pack: $value;
   -moz-box-pack: $value;
@@ -12,6 +13,7 @@
   -o-box-pack: $value;
   box-pack: $value;
 }
+
 @mixin box-align($value:center) {
   -webkit-box-align: $value;
   -moz-box-align: $value;
@@ -19,6 +21,7 @@
   -o-box-align: $value;
   box-align: $value;
 }
+
 @mixin display-box {
   display: -webkit-box;
   display: -moz-box;
@@ -34,23 +37,42 @@
 //  }
 //}
 
+$height: 4.4em;
+$color: #e7e7e7;
 
-$height:4.4em;
-$color:#e7e7e7;
-$rightWidth:30px;
-$itemSelector:'>.react-cell';
-
-.react-cells{
+.react-cells {
   font-size: 10px;
   background: #FFF;
   color: #333;
 
-  &[data-border=true]{
+  &[data-borders=both] {
+    border-top: 1px solid $color;
+    border-bottom: 1px solid $color;
+  }
+  &[data-borders=top] {
+    border-top: 1px solid $color;
+  }
+  &[data-borders=bottom] {
     border-bottom: 1px solid $color;
   }
 
+  &[data-border=true] {
 
-  #{$itemSelector} {
+  }
+
+  &[data-left-border=true] {
+    .react-cell-left {
+      border-bottom: 1px solid $color;
+    }
+  }
+
+  &[data-left-border=false] {
+    .react-cell-left {
+      border-bottom: none;
+    }
+  }
+
+  > .react-cell {
     @include display-box;
 
     & > * {
@@ -62,19 +84,20 @@ $itemSelector:'>.react-cell';
     height: $height;
     padding-left: 1em;
 
-
     &:last-child {
       > * {
-        border-bottom: none!important;
+        border-bottom: none !important;
       }
     }
 
-    >.react-cell-left {
-      padding-right: 1em;
-
-      &[data-border=true]{
-        border-bottom: 1px solid $color;
+    &[data-clickable=true] {
+      &:active{
+        background: #eee;
       }
+    }
+
+    > .react-cell-left {
+      padding-right: 1em;
 
       > img {
         object-fit: cover;
@@ -85,18 +108,12 @@ $itemSelector:'>.react-cell';
       font-size: 1.6em;
       @include box-flex;
       @include box-pack(start);
-
-      &[data-border=true]{
-        border-bottom: 1px solid $color;
-      }
+      border-bottom: 1px solid $color;
     }
 
-    .react-cell-right {
-      width:$rightWidth;
-
-      &[data-border=true]{
-        border-bottom: 1px solid $color;
-      }
+    >.react-cell-right {
+      width: 30px;
+      border-bottom: 1px solid $color;
     }
   }
 }
