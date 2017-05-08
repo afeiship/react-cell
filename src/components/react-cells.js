@@ -14,7 +14,8 @@ export default class extends PureComponent {
     borders: PropTypes.oneOf([
       'top',
       'bottom',
-      'both'
+      'both',
+      'none'
     ])
   };
 
