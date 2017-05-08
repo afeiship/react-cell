@@ -9,8 +9,8 @@ base.entry = {
 base.output = {
   path: config.build.assetsRoot,
   publicPath: config.build.assetsPublicPath,
-  filename: 'react-cell.js',
-  library: 'ReactCell',
+  filename: 'react-cells.js',
+  library: 'ReactCells',
   libraryTarget: 'umd'
 }
 
