@@ -1,5 +1,5 @@
-# react-cell
-> React cell component.
+# react-cells
+> React cells component.
 
 
 ## properties:

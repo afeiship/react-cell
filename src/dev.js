@@ -10,7 +10,7 @@ import Icon3Image from './assets/icon3.jpg';
 class App extends React.Component {
   render() {
     return (
-      <div className="hello-react-cell">
+      <div className="hello-react-cells">
         <ReactCells border={false}>
           <ReactCell>
             <ReactCellLeft>

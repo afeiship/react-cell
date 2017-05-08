@@ -1,5 +1,5 @@
 {
-  "name": "react-cell",
+  "name": "react-cells",
   "version": "0.1.0",
   "description": "React cell component.",
   "author": "afeiship <1290657123@qq.com>",
@@ -12,19 +12,19 @@
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/afeiship/react-cell.git"
+    "url": "git+https://github.com/afeiship/react-cells.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/afeiship/react-cell/issues"
+    "url": "https://github.com/afeiship/react-cells/issues"
   },
-  "homepage": "https://github.com/afeiship/react-cell",
+  "homepage": "https://github.com/afeiship/react-cells",
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
     "docs": "node build/auto-readme.js"
   },
-  "main": "./dist/react-cell.js",
+  "main": "./dist/react-cells.js",
   "devDependencies": {
     "autoprefixer": "^6.4.0",
     "autoprefixer-loader": "^3.2.0",
