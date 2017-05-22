@@ -11,6 +11,7 @@ export default class extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
     leftBorder: PropTypes.bool,
+    innerPadding:PropTypes.bool,
     borders: PropTypes.oneOf([
       'top',
       'bottom',
@@ -21,15 +22,16 @@ export default class extends PureComponent {
 
   static defaultProps = {
     leftBorder: true,
-    borders: 'both'
+    borders: 'both',
+    innerPadding:true,
   };
   /*===properties end===*/
 
 
   render() {
-    const {className, children, borders, leftBorder,...props} = this.props;
+    const {className, children, borders, leftBorder,innerPadding,...props} = this.props;
     return (
-      <section {...props} data-borders={borders} data-left-border={leftBorder}
+      <section {...props} data-inner-padding={innerPadding} data-borders={borders} data-left-border={leftBorder}
                className={classNames('react-cells', className)}>{children}</section>
     );
   }
