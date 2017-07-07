@@ -12,6 +12,8 @@ BACKUP_PROPERTIES
 BACKUP_USAGE
 ```
 
+## todos:
+- [ ] clickable -> access like weui
 
 
 ## resource:
