@@ -13,8 +13,8 @@ BACKUP_USAGE
 ```
 
 ## todos:
-- [ ] clickable -> access like weui
-
+- [ ] clickable -> access like weui.
+- [ ] add property for cell-right -> inner cell body(position:absolute).
 
 ## resource:
 + http://www.cnblogs.com/Kummy/p/4966937.html
