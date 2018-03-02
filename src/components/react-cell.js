@@ -1,7 +1,4 @@
-import './style.scss';
-
 import React, {PureComponent} from 'react';
-
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import noop from 'noop';
