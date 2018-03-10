@@ -15,6 +15,7 @@ BACKUP_USAGE
 ## todos:
 - [ ] clickable -> access like weui.
 - [ ] add property for cell-right -> inner cell body(position:absolute).
+- [ ] remove arrow img; instead of css/html char
 
 ## resource:
 + http://www.cnblogs.com/Kummy/p/4966937.html

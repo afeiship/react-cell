@@ -1,5 +1,7 @@
 @mixin box-flex($n:1) {
+  /* autoprefixer: off */
   -webkit-box-flex: $n;
+  /* autoprefixer: on */
   -moz-box-flex: $n;
   -ms-box-flex: $n;
   -o-box-flex: $n;
@@ -7,7 +9,9 @@
 }
 
 @mixin box-pack($value:center) {
+  /* autoprefixer: off */
   -webkit-box-pack: $value;
+  /* autoprefixer: on */
   -moz-box-pack: $value;
   -ms-box-pack: $value;
   -o-box-pack: $value;
@@ -15,7 +19,9 @@
 }
 
 @mixin box-align($value:center) {
+  /* autoprefixer: off */
   -webkit-box-align: $value;
+  /* autoprefixer: on */
   -moz-box-align: $value;
   -ms-box-align: $value;
   -o-box-align: $value;
