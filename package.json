@@ -84,8 +84,8 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "noop": "github:afeiship/noop",
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1",
+    "react": "*",
+    "react-dom": "*",
     "react-prop-types": "^0.4.0",
     "webkit-sassui-icon-line-arrow": "github:afeiship/webkit-sassui-icon-line-arrow"
   }
