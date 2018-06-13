@@ -5,7 +5,6 @@ $react-cells-options:(
 )!default;
 
 @import 'node_modules/webkit-sassui-icon-line-arrow/dist/webkit-sassui-icon-line-arrow.scss';
-@import 'node_modules/webkit-sassui-hairline/dist/webkit-sassui-hairline.scss';
 
 .react-cells {
   $cell-height: map-get($map: $react-cells-options, $key: cell-height);
