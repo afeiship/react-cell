@@ -86,7 +86,7 @@
     "noop": "github:afeiship/noop",
     "react": "*",
     "react-dom": "*",
-    "react-prop-types": "^0.4.0",
+    "prop-types": "*",
     "webkit-sassui-icon-line-arrow": "github:afeiship/webkit-sassui-icon-line-arrow"
   }
 }
