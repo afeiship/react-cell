@@ -87,6 +87,8 @@
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-prop-types": "^0.4.0",
+    "webkit-sassui-hairline": "github:afeiship/webkit-sassui-hairline",
+    "webkit-sassui-icon-line-arrow": "github:afeiship/webkit-sassui-icon-line-arrow",
     "webkit-sassui-ios-setting-entry": "github:afeiship/webkit-sassui-ios-setting-entry"
   }
 }

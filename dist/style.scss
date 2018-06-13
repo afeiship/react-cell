@@ -1,105 +1,42 @@
-@mixin box-flex($n:1) {
-  -webkit-box-flex: $n;
-  -moz-box-flex: $n;
-  -ms-box-flex: $n;
-  -o-box-flex: $n;
-  box-flex: $n;
-}
-
-@mixin box-pack($value:center) {
-  -webkit-box-pack: $value;
-  -moz-box-pack: $value;
-  -ms-box-pack: $value;
-  -o-box-pack: $value;
-  box-pack: $value;
-}
-
-@mixin box-align($value:center) {
-  -webkit-box-align: $value;
-  -moz-box-align: $value;
-  -ms-box-align: $value;
-  -o-box-align: $value;
-  box-align: $value;
-}
-
-@mixin display-box {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-box;
-  display: -o-box;
-  display: box;
-}
-
-//
-//@mixin data-border{
-//  &[data-border]{
-//    border-bottom: 1px solid $color;
-//  }
-//}
-
 $react-cells-options:(
+  base-font-size: 10px,
   cell-height: 4.4em,
-  border-color: #e4e4e4,
+  border-color: #e4e4e4
 )!default;
+
+@import 'node_modules/webkit-sassui-icon-line-arrow/dist/webkit-sassui-icon-line-arrow.scss';
+@import 'node_modules/webkit-sassui-hairline/dist/webkit-sassui-hairline.scss';
 
 .react-cells {
   $cell-height: map-get($map: $react-cells-options, $key: cell-height);
   $border-color: map-get($map: $react-cells-options, $key: border-color);
+  $base-font-size: map-get($map: $react-cells-options, $key: base-font-size);
 
-  font-size: 10px;
-  background: #FFF;
+  font-size: $base-font-size;
   color: #333;
+  user-select: none;
 
-  //dataBorders:
+  //data-borders:
   &[data-borders=both] {
     border-top: 1px solid $border-color;
     border-bottom: 1px solid $border-color;
   }
+
   &[data-borders=top] {
     border-top: 1px solid $border-color;
   }
+
   &[data-borders=bottom] {
     border-bottom: 1px solid $border-color;
   }
 
-  &[data-left-border=true] {
-    .react-cell-left {
-      border-bottom: 1px solid $border-color;
-    }
-  }
-
-  //LeftBorder:
-  &[data-left-border=false] {
-    .react-cell-left {
-      border-bottom: none;
-    }
-  }
-
-  // InnerPadding:
-  &[data-inner-padding=true]{
-    >.react-cell{
-      padding-left: 1em;
-    }
-  }
-
-  &[data-inner-padding=false]{
-    >.react-cell{
-      padding-left: 0;
-    }
-  }
-
   > .react-cell {
-    @include display-box;
-    // @include box-align(center);
+    display: flex;
+    min-height: $cell-height;
 
     & > * {
-      @include display-box;
-      @include box-align();
-      @include box-pack;
-    }
-
-    &[data-auto-height=false]{
-      height: $cell-height;
+      display: flex;
+      align-items: center;
     }
 
     &:last-child {
@@ -115,23 +52,31 @@ $react-cells-options:(
     }
 
     > .react-cell-left {
-      padding-right: 1em;
-
-      > img {
-        display: block;
-        object-fit: cover;
+      &[data-borderd=true]{
+        border-bottom: 1px solid $border-color;
+      }
+      &[data-borderd=false]{
+        border-bottom: 1px solid transparent;
       }
     }
 
     > .react-cell-body {
-      @include box-flex;
-      @include box-pack(start);
+      flex:1;
       border-bottom: 1px solid $border-color;
+      padding: 0 1em;
+      font-size:1.4em;
     }
 
-    >.react-cell-right {
-      // width: 30px;
+    > .react-cell-right {
+      color: #999;
       border-bottom: 1px solid $border-color;
+      font-size:1.2em;
+      i{
+        &:after{
+          width: 0.4em;
+          height: 0.4em;
+        }
+      }
     }
   }
 }

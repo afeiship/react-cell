@@ -4,37 +4,18 @@
 
 ## properties:
 ```javascript
-//ReactCells:
-/*===properties start===*/
-static propTypes = {
-  className: PropTypes.string,
-  leftBorder: PropTypes.bool,
-  borders: PropTypes.oneOf([
-    'top',
-    'bottom',
-    'both'
-  ])
-};
 
-static defaultProps = {
-  leftBorder: true,
-  borders: 'both'
-};
-/*===properties end===*/
+  static propTypes = {
+    className: PropTypes.string,
+    leftBorder: PropTypes.bool,
+    borders: PropTypes.oneOf(BORDER_DIRECTION)
+  };
+
+  static defaultProps = {
+    leftBorder: true,
+    borders: 'both'
+  };
   
-//ReactCell
-/*===properties start===*/
-static propTypes = {
-  className: PropTypes.string,
-  clickable: PropTypes.bool
-};
-
-static defaultProps = {
-  borders: 'both',
-  clickable: true
-};
-/*===properties end===*/
-
 ```
 
 ## usage:
@@ -57,13 +38,24 @@ class App extends React.Component {
 
           <ReactCell>
             <ReactCellLeft>
-              <img src={Icon2Image} width="24" alt=""/>
+              <img src={Icon2Image} width="24" alt="" />
             </ReactCellLeft>
             <ReactCellBody>
-              搜索
+              <span style={{ fontSize: '18px' }}>
+                <b>搜索</b>
+              </span>
+            </ReactCellBody>
+            <ReactCellRight />
+          </ReactCell>
+
+
+          <ReactCell>
+            <ReactCellBody>
+              <span style={{ fontSize: '18px' }}>搜索-with sub</span>
             </ReactCellBody>
             <ReactCellRight>
-              <img src="http://image.flaticon.com/icons/png/128/126/126490.png" width="12" alt=""/>
+              <span style={{ marginRight:'5px'}}>还需要点啥</span>
+              <ReactCellArrow/>
             </ReactCellRight>
           </ReactCell>
 
@@ -71,24 +63,59 @@ class App extends React.Component {
           <ReactCell>
             <ReactCellBody>
               <div className="row">
-                <div className="left">搜索</div>
+                <div className="left">搜索 <br/> abc <br/>1234</div>
                 <div className="right" style={{textAlign: 'right', color: '#999'}}>xljldsf</div>
               </div>
             </ReactCellBody>
-            <ReactCellRight>
-              <img src="http://image.flaticon.com/icons/png/128/126/126490.png" width="12" alt=""/>
-            </ReactCellRight>
+            <ReactCellRight/>
           </ReactCell>
 
+
+        </ReactCells>
+
+
+        <div className="blank-20"></div>
+        <div className="blank-20"></div>
+        <div className="blank-20"></div>
+        <div className="blank-20"></div>
+        <div className="blank-20"></div>
+        <div className="blank-20"></div>
+        <div className="blank-20"></div>
+
+         <ReactCells>
+          <ReactCell>
+            <ReactCellLeft>
+              <img src={Icon1Image} width="24" alt=""/>
+            </ReactCellLeft>
+            <ReactCellBody>
+              购物车
+            </ReactCellBody>
+            <ReactCellRight style={{color:'#f00',fontSize:'16px'}}>*</ReactCellRight>
+          </ReactCell>
+
+
+          <ReactCell>
+            <ReactCellLeft>
+              <img src={Icon2Image} width="24" alt=""/>
+            </ReactCellLeft>
+            <ReactCellBody>
+              搜索
+            </ReactCellBody>
+            <ReactCellRight/>
+          </ReactCell>
 
         </ReactCells>
       </div>
     );
   }
 }
+
 ```
 
-
+## todos:
+- [ ] clickable -> access like weui.
+- [ ] add property for cell-right -> inner cell body(position:absolute).
+- [ ] remove arrow img; instead of css/html char
 
 ## resource:
 + http://www.cnblogs.com/Kummy/p/4966937.html

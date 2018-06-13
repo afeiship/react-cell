@@ -1,11 +1,10 @@
-import React, {PureComponent} from 'react';
+import React, { Component } from 'react';
 
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import noop from 'noop';
-import arrowImg from './arrow.png';
+import Arrow from './react-cell-arrow';
 
-export default class extends PureComponent {
+export default class extends Component {
   /*===properties start===*/
   static propTypes = {
     className: PropTypes.string
@@ -13,10 +12,14 @@ export default class extends PureComponent {
   /*===properties end===*/
 
   render() {
-    const {className, children, ...props} = this.props;
+    const { className, children, ...props } = this.props;
+    const _children = children || <Arrow />;
     return (
-      <div {...props} className={classNames('react-cell-right', className)}>{children ||
-      <img width="12" src={arrowImg}/>}</div>
+      <div
+        className={classNames('react-cell-right', className)}
+        children={_children}
+        {...props}
+      />
     );
   }
 }

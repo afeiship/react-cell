@@ -1,6 +1,6 @@
 import './dev.scss';
 
-import {ReactCell, ReactCellBody, ReactCellLeft, ReactCellRight, ReactCells} from './main';
+import { ReactCell, ReactCellBody, ReactCellLeft, ReactCellRight, ReactCellArrow, ReactCells} from './main';
 
 import Icon1Image from './assets/icon1.jpg';
 import Icon2Image from './assets/icon2.jpg';
@@ -25,27 +25,36 @@ class App extends React.Component {
 
           <ReactCell>
             <ReactCellLeft>
-              <img src={Icon2Image} width="24" alt=""/>
+              <img src={Icon2Image} width="24" alt="" />
             </ReactCellLeft>
             <ReactCellBody>
-              <span style={{fontSize:'28px'}}>搜索</span>
+              <span style={{ fontSize: '18px' }}>
+                <b>搜索</b>
+              </span>
+            </ReactCellBody>
+            <ReactCellRight />
+          </ReactCell>
+
+
+          <ReactCell>
+            <ReactCellBody>
+              <span style={{ fontSize: '18px' }}>搜索-with sub</span>
             </ReactCellBody>
             <ReactCellRight>
-              <img src="http://image.flaticon.com/icons/png/128/126/126490.png" width="12" alt=""/>
+              <span style={{ marginRight:'5px'}}>还需要点啥</span>
+              <ReactCellArrow/>
             </ReactCellRight>
           </ReactCell>
 
 
-          <ReactCell autoHeight={true}>
+          <ReactCell>
             <ReactCellBody>
               <div className="row">
                 <div className="left">搜索 <br/> abc <br/>1234</div>
                 <div className="right" style={{textAlign: 'right', color: '#999'}}>xljldsf</div>
               </div>
             </ReactCellBody>
-            <ReactCellRight>
-              <img src="http://image.flaticon.com/icons/png/128/126/126490.png" width="12" alt=""/>
-            </ReactCellRight>
+            <ReactCellRight/>
           </ReactCell>
 
 
@@ -54,8 +63,13 @@ class App extends React.Component {
 
         <div className="blank-20"></div>
         <div className="blank-20"></div>
+        <div className="blank-20"></div>
+        <div className="blank-20"></div>
+        <div className="blank-20"></div>
+        <div className="blank-20"></div>
+        <div className="blank-20"></div>
 
-         <ReactCells innerPadding={false}>
+         <ReactCells>
           <ReactCell>
             <ReactCellLeft>
               <img src={Icon1Image} width="24" alt=""/>
@@ -74,9 +88,7 @@ class App extends React.Component {
             <ReactCellBody>
               搜索
             </ReactCellBody>
-            <ReactCellRight>
-              <img src="http://image.flaticon.com/icons/png/128/126/126490.png" width="12" alt=""/>
-            </ReactCellRight>
+            <ReactCellRight/>
           </ReactCell>
 
         </ReactCells>

@@ -1,10 +1,9 @@
-import React, {PureComponent} from 'react';
+import React, { Component } from 'react';
 
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import noop from 'noop';
 
-export default class extends PureComponent {
+export default class extends Component {
   /*===properties start===*/
   static propTypes = {
     className: PropTypes.string,
@@ -15,9 +14,9 @@ export default class extends PureComponent {
   /*===properties end===*/
 
   render() {
-    const {className, children,...props} = this.props;
+    const { className, ...props } = this.props;
     return (
-      <div {...props} className={classNames('react-cell-body', className)}>{children}</div>
+      <div className={classNames('react-cell-body', className)} {...props} />
     );
   }
 }
