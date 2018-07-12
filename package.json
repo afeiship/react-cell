@@ -81,11 +81,13 @@
     "node": ">= 4.0.0",
     "npm": ">= 3.0.0"
   },
+  "peerDependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  },
   "dependencies": {
     "classnames": "^2.2.5",
     "noop": "github:afeiship/noop",
-    "react": "*",
-    "react-dom": "*",
     "prop-types": "*",
     "webkit-sassui-icon-line-arrow": "github:afeiship/webkit-sassui-icon-line-arrow"
   }
